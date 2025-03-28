@@ -73,7 +73,6 @@ chmod u+x "${dtop}/UpdateScript.sh"
 sleep 0.5
 }
 if confirm "Above details correct?"; then
-if confirm "Fresh Install (y) Update Install (n)"; then
 if confirm "Do you also want to install the server?"; then
 ins_server
 fi
@@ -81,34 +80,6 @@ if confirm "Do you want to install the old files aswell (not recommended)"; then
 ins_oldfiles
 fi
 ins_newfiles
-ins_updater
+# ins_updater
 printf "\e[32;1mInstallation Successful!\e[0m\n"
-else
-printf "\e[34;1mUpdating Install\e[0m\n"
-op1=false
-op2=false
-op3=false
-if confirm "Do you want to update the server?"; then
-op1=true
-fi
-if confirm "Do you also want to update MSG.sh?"; then
-op2=true
-fi
-if confirm "Do you also want to update Rx/TxMSG.sh?"; then
-op3=true
-fi
-printf "\e[34;1mRemoving Old Files\e[0m\n"
-sh ./cleanup.sh ${dtop} ${op1} ${op2} ${op3}
-printf "\e[34;1mInstalling New Files\e[0m\n"
-if [ $op1 == true ]; then
-ins_server
-fi
-if [ $op2 == true ]; then
-ins_newfiles
-fi
-if [ $op3 == true ]; then
-ins_oldfiles
-fi
-ins_updater
-fi
 fi
