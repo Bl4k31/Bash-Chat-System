@@ -22,6 +22,7 @@ To Open chat go to your user folder (Macintosh HD/Users/firstname.lastname)
 Double click the Tx and Rx scripts
 
 # MSG.sh (New ver.)
+## In MSG:
 Enter the server IP, Port, and Reciever Port (Provided by the host)
 # Rx/TxMSG.sh (Old ver.)
 * In Tx:
