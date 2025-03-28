@@ -1,6 +1,6 @@
 ip1=`ifconfig | grep "inet " | grep -v 127.0.0.1 | awk '{print $2}'`
-read -p "Server Port (8888 Recommended): " pt1
-read -p "Receiver Port (8889 Recommended): " pt2
+pt1=`osascript -e 'text returned of (display dialog "Server Port:" default answer "8888")'`
+pt2=`osascript -e 'text returned of (display dialog "Receiver Port:" default answer "8890")'`
 echo "Server IP: ${ip1}"
 echo "Server Port: ${pt1}"
 echo "Server Ready; Awaiting connections"

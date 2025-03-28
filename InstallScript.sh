@@ -61,6 +61,14 @@ xattr -d com.apple.quarantine "${dtop}/MSG.sh"
 printf "\e[34;1mUpdating Messenger permissions in ${dtop}/MSG.sh\e[0m\n"
 chmod u+x "${dtop}/MSG.sh"
 sleep 0.5
+printf "\e[34;1mCopying Messenger GUI to ${dtop}\e[0m\n"
+cp "${ins_loc}/MSG-GUI.sh" ${dtop}
+sleep 0.5
+printf "\e[31;1mClearing Malware warning for ${dtop}/MSG-GUI.sh (May Error)\e[0m\n"
+xattr -d com.apple.quarantine "${dtop}/MSG-GUI.sh"
+printf "\e[34;1mUpdating Messenger permissions in ${dtop}/MSG-GUI.sh\e[0m\n"
+chmod u+x "${dtop}/MSG-GUI.sh"
+sleep 0.5
 }
 ins_updater() {
 printf "\e[34;1mCopying Updater to ${dtop}\e[0m\n"
