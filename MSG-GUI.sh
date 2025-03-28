@@ -18,19 +18,19 @@ fi
 
 }
 send() {
-local msg="$1"
-echo "<${Uname}> ${msg}" | nc $S_IP $S_Port
-}
-while true; do
-receive &
-confirmation=$(osascript -e 'display dialog "Do you want to send a message?" buttons {"Cancel", "Send message"} default button "Send message"')
-if [[ "$confirmation" == *"button returned:Send message"* ]]; then
-  # Text Input Dialog
-  to_send=$(osascript -e 'text returned of (display dialog "Enter your message:" default answer "")')
-
-  if [[ -n "$to_send" ]]; then
-    send "${to_send}"
-  fi
-fi
-
+    local msg="$1"
+    echo "<${Uname}> ${msg}" | nc $S_IP $S_Port
+    }
+    while true; do
+    receive &
+    confirmation=$(osascript -e 'display dialog "Do you want to send a message?" buttons {"Exit Programme", "Send message"} default button "Send message"')  
+    if [[ "$confirmation" == *"button returned:Send message"* ]]; then
+    # Text Input Dialog
+        to_send=$(osascript -e 'text returned of (display dialog "Enter your message:" default answer "")')
+        if [[ -n "$to_send" ]]; then
+            send "${to_send}"
+        fi
+    else
+        break
+    fi
 done
