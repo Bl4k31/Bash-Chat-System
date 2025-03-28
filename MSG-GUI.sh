@@ -10,7 +10,7 @@ echo "$ips" | nc $S_IP $S_Port
 receive() {
 while true; do
 Rx=`nc -l ${pt1}`
-echo "Msg Rx: $Rx"
+echo "$Rx"
 printf "Message: "
 done
 }
