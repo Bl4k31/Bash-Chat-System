@@ -3,20 +3,19 @@ use framework "Cocoa"
 use scripting additions
 
 set theApp to current application
+global theResult  -- Global variable to persist the result
 
 -- Create the window
-set theWindow to current application's NSWindow's alloc()'s initWithContentRect:{{200, 400}, {400, 200}} styleMask:(current application's NSTitledWindowMask + current application's NSClosableWindowMask) backing:2 defer:false
+set theWindow to (current application's NSWindow's alloc()'s initWithContentRect:{{200, 400}, {400, 200}} styleMask:((current application's NSWindowStyleMaskTitled) + (current application's NSWindowStyleMaskClosable)) backing:(current application's NSBackingStoreBuffered) defer:false)
 theWindow's setTitle:"Send Message"
 theWindow's setLevel:(current application's NSFloatingWindowLevel)
 
 -- Create the view
-set theView to current application's NSView's alloc()'s initWithFrame:{{0, 0}, {400, 200}}
+set theView to (current application's NSView's alloc()'s initWithFrame:{{0, 0}, {400, 200}})
 theWindow's setContentView:theView
 
 -- Create the label
-set originPoint to current application's NSPoint's alloc()'s initWithX:20 Y:120
-set sizeRect to current application's NSSize's alloc()'s initWithWidth:360 height:20
-set theLabel to current application's NSTextField's alloc()'s initWithFrame:(current application's NSRect's alloc()'s initWithRect:(current application's NSRectFromOriginAndSize(originPoint, sizeRect)))
+set theLabel to (current application's NSTextField's alloc()'s initWithFrame:{{20, 120}, {360, 20}})
 theLabel's setStringValue:"Enter your message:"
 theLabel's setBezeled:false
 theLabel's setDrawsBackground:false
@@ -25,41 +24,39 @@ theLabel's setSelectable:false
 theView's addSubview:theLabel
 
 -- Create the text field
-set originPoint2 to current application's NSPoint's alloc()'s initWithX:20 Y:80
-set sizeRect2 to current application's NSSize's alloc()'s initWithWidth:360 height:30
-set theTextField to current application's NSTextField's alloc()'s initWithFrame:(current application's NSRect's alloc()'s initWithRect:(current application's NSRectFromOriginAndSize(originPoint2, sizeRect2)))
+set theTextField to (current application's NSTextField's alloc()'s initWithFrame:{{20, 80}, {360, 30}})
 theView's addSubview:theTextField
 
 -- Create the button
-set originPoint3 to current application's NSPoint's alloc()'s initWithX:160 Y:20
-set sizeRect3 to current application's NSSize's alloc()'s initWithWidth:80 height:30
-set theButton to current application's NSButton's alloc()'s initWithFrame:(current application's NSRect's alloc()'s initWithRect:(current application's NSRectFromOriginAndSize(originPoint3, sizeRect3)))
+set theButton to (current application's NSButton's alloc()'s initWithFrame:{{160, 20}, {80, 30}})
 theButton's setTitle:"Send"
-theButton's setBezelStyle:(current application's NSRoundedBezelStyle)
+theButton's setBezelStyle:(current application's NSBezelStyleRounded)
 theView's addSubview:theButton
 
--- Display the window
-theWindow's makeKeyAndOrderFront:me
+-- Define button action
+script ButtonHandler
+    on clicked_(sender)
+        if sender is theButton then
+            set theResult to (theTextField's stringValue() as text)
+            theWindow's close()
+            (current application's NSApplication's sharedApplication())'s stop:(me)
+        end if
+    end clicked_
+end script
 
--- Create a variable to store the result
-set theResult to ""
-
--- Define the button action
-on clicked_(sender)
-    if sender is theButton then
-        set theResult to (theTextField's stringValue() as text)
-        theWindow's close()
-        -- Correct method to quit the application without parentheses
-        current application's NSApplication's sharedApplication()'s terminate
-    end if
-end clicked_
-
--- Set the action for the button
-theButton's setTarget:me
+-- Set the button action
+theButton's setTarget:ButtonHandler
 theButton's setAction:"clicked_:"
 
--- Run the application
-current application's NSApplication's sharedApplication()'s run()
+-- Show the window
+theWindow's makeKeyAndOrderFront:me
 
--- Return the result
+-- Run the application
+(current application's NSApplication's sharedApplication())'s run()
+
+-- Ensure the result persists after the event loop stops
+if theResult is missing value then
+    set theResult to ""  -- Return an empty string if no input was provided
+end if
+
 return theResult
