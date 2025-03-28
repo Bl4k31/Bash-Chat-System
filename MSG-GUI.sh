@@ -21,6 +21,6 @@ echo "<${Uname}> $msg" | nc $S_IP $S_Port
 printf "Message: "
 while true; do
 receive &
-read -p "Message: " to_send
+read to_send
 send $to_send
 done
