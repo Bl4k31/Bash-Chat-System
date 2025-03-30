@@ -36,22 +36,36 @@ rem_server() {
     printf "\e[34;1mDeleting Server.sh from ${dtop}\e[0m\n"
     rm "${dtop}/Server.sh"
 }
+rem_nixserver() {
+    printf "\e[34;1mDeleting Server.sh from ${dtop}\e[0m\n"
+    rm "${dtop}/Server-NonGUI.sh"
+}
 
 rem_newfiles() {
     printf "\e[34;1mDeleting MSG.sh from ${dtop}\e[0m\n"
     rm "${dtop}/MSG.sh"
 }
+rem_nixfiles() {
+    printf "\e[34;1mDeleting MSG.sh from ${dtop}\e[0m\n"
+    rm "${dtop}/MSG-NonGUI.sh"
+}
 
 
 if confirm "Above details correct?"; then
+if confirm "Do you want to delete the Rx/TxMSG.sh Files?"; then
+rem_oldfiles
+fi
+if confirm "Do you want to delete the MSG.sh File?"; then
 if confirm "Do you want to remove Server.sh?"; then
 rem_server
 fi
-if confirm "Do you want to delete the old Rx/TxMSG.sh Files?"; then
-rem_oldfiles
-fi
-if confirm "Do you want to delete the new MSG.sh File?"; then
 rem_newfiles
+fi
+if confirm "Do you want to delete the MSG-NonGUI.sh File?"; then
+if confirm "Do you want to remove Server-NonGUI.sh?"; then
+rem_nixserver
+fi
+rem_nixfiles
 fi
 
 printf "\e[32;1mUninstallation Successful!\e[0m\n"
