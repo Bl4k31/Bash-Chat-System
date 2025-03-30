@@ -1,8 +1,8 @@
 #!/bin/bash
-printf "\e[34;1mMessage system Self-install script\e[0m\n"
+printf "\e[34;1mMessage system Self-update script\e[0m\n"
 dtop=`pwd`
 usr_dir=`whoami`
-read -p "Update Folder Path (Required): " ins_loc
+ins_loc=`osascript -e 'text returned from (choose folder with prompt "Please select the Update folder location:)"'
 printf "\e[32;1mFiles To Update: ${ins_loc}\e[0m\n"
 printf "\e[33;1mFiles For Update: ${dtop}\e[0m\n"
 printf "\e[30;1mUsername: ${usr_dir}\e[0m\n"
