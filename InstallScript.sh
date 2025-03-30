@@ -36,7 +36,7 @@ sleep 0.5
 }
 ins_oldfiles() {
 printf "\e[34;1mCopying Message Receiver to ${dtop}\e[0m\n"
-cp "${ins_loc}/RxMSG.sh" ${dtop}
+cp "${ins_loc}/UnixSafe/RxMSG.sh" ${dtop}
 sleep 0.5
 printf "\e[31;1mClearing Malware warning for ${dtop}/RxMSG.sh (May Error)\e[0m\n"
 xattr -d com.apple.quarantine "${dtop}/RxMSG.sh"
@@ -44,7 +44,7 @@ printf "\e[34;1mUpdating Message Receiver permissions in ${dtop}/RxMSG.sh\e[0m\n
 chmod u+x "${dtop}/RxMSG.sh"
 sleep 0.5
 printf "\e[34;1mCopying Message Sender to ${dtop}\e[0m\n"
-cp "${ins_loc}/TxMSG.sh" ${dtop}
+cp "${ins_loc}/UnixSafe/TxMSG.sh" ${dtop}
 sleep 0.5
 printf "\e[31;1mClearing Malware warning for ${dtop}/TxMSG.sh (May Error)\e[0m\n"
 xattr -d com.apple.quarantine "${dtop}/TxMSG.sh"
@@ -62,24 +62,16 @@ printf "\e[34;1mUpdating Messenger permissions in ${dtop}/MSG.sh\e[0m\n"
 chmod u+x "${dtop}/MSG.sh"
 sleep 0.5
 }
-ins_updater() {
-printf "\e[34;1mCopying Updater to ${dtop}\e[0m\n"
-cp "${ins_loc}/UpdateScript.sh" ${dtop}
-sleep 0.5
-printf "\e[31;1mClearing Malware warning for ${dtop}/UpdateScript.sh (May Error)\e[0m\n"
-xattr -d com.apple.quarantine "${dtop}/UpdateScript.sh"
-printf "\e[34;1mChanging Updater permissions in ${dtop}/UpdateScript.sh\e[0m\n"
-chmod u+x "${dtop}/UpdateScript.sh"
-sleep 0.5
-}
 if confirm "Above details correct?"; then
 if confirm "Do you also want to install the server?"; then
 ins_server
 fi
-if confirm "Do you want to install the old files aswell (not recommended)"; then
+if confirm "Do you want to install the UNIX Compatable version?"; then
 ins_oldfiles
 fi
+if confirm "Do you want to install the Macos only GUI Ver?"; then
 ins_newfiles
+fi
 # ins_updater
 printf "\e[32;1mInstallation Successful!\e[0m\n"
 fi
