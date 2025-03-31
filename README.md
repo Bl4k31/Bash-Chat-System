@@ -6,7 +6,7 @@ Trying to make a GUI Version (Applescript) - Might take a while
 # INITIAL SETUP:
 ## Installing & Updating (Should work for all major NIX' Systems)
 ### Clone repo:
-**_In terminal_**
+**_In terminal \n_**
 `git clone https://github.com/Bl4k31/MSGSYS; cd ./MSGSYS; sh ./InstallScript.sh`
 ### Or
 **_In terminal_**
