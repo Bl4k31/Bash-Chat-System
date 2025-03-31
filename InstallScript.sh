@@ -28,7 +28,7 @@ ins_server() {
 printf "\e[34;1mCopying Server to ${dtop}\e[0m\n"
 cp "${ins_loc}/Server.sh" ${dtop}
 sleep 0.5
-printf "\e[31;1mClearing Malware warning for ${dtop}/Server.sh (May Error)\e[0m\n"
+printf "\e[31;1mClearing quarantine for ${dtop}/Server.sh (May Error)\e[0m\n"
 xattr -d com.apple.quarantine "${dtop}/Server.sh"
 printf "\e[34;1mUpdating Server permissions in ${dtop}/Server.sh\e[0m\n"
 chmod u+x "${dtop}/Server.sh"
@@ -54,7 +54,7 @@ ins_newfiles() {
 printf "\e[34;1mCopying Messenger to ${dtop}\e[0m\n"
 cp "${ins_loc}/MSG.sh" ${dtop}
 sleep 0.5
-printf "\e[31;1mClearing Malware warning for ${dtop}/MSG.sh (May Error)\e[0m\n"
+printf "\e[31;1mClearing quarantine for ${dtop}/MSG.sh (May Error)\e[0m\n"
 xattr -d com.apple.quarantine "${dtop}/MSG.sh"
 printf "\e[34;1mUpdating Messenger permissions in ${dtop}/MSG.sh\e[0m\n"
 chmod u+x "${dtop}/MSG.sh"
