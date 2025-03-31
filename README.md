@@ -4,8 +4,6 @@ a Quick and dirty Bash Messaging System I'm Developing for fun.
 
 > Trying to make a GUI Version - Might take a while
 
-## INITIAL SETUP
-
 ## Installing & Updating (Should work for all major *NIX Systems)
 
 ### Clone repo
@@ -18,7 +16,7 @@ a Quick and dirty Bash Messaging System I'm Developing for fun.
 **_In terminal: (curl)_**
  `curl -L -O https://github.com/Bl4k31/Bash-Chat-System/archive/v0.2.0.zip; unzip v0.2.0.zip; cd ./Bash-Chat-System-0.2.0; sh ./InstallScript.sh`
 
-## Changing Default app for .sh files (Macos Only)
+### Changing Default app for .sh files (First install)(Macos Only)
 
 1. Select `Get Info`
 2. Select the `Open With:` Dropdown
