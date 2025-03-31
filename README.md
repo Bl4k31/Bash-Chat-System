@@ -21,10 +21,11 @@ _Trying to make a GUI Version (Applescript) - Might take a while_
 1. Select `Get Info`
 2. Select the `Open With:` Dropdown
 3. Click on the `<default application that opens .sh>` navigate to `Other…`
-
-	a. Change `Enable: #########` to `Enable: All applications`.
-	b. Search for, and click: `Terminal`
-	c. Select `ADD`
+<bl>
+	<li> Change `Enable: #########` to `Enable: All applications`.
+	<li> Search for, and click: `Terminal`
+	<li> Select `ADD`
+</bl>
 
 4. Click `Change All…`
 
