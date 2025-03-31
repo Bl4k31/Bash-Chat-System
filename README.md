@@ -4,8 +4,17 @@ Trying to make a GUI Version (Applescript) - Might take a while
 
 
 # INITIAL SETUP:
-## Installing & Updating (Should work for NIX' Systems)
-Open a terminal at this folder by going to previous folder:
+## Installing & Updating (Should work for all major NIX' Systems)
+### Clone repo:
+**_In terminal_**
+`git clone https://github.com/Bl4k31/MSGSYS; cd ./MSGSYS; sh ./InstallScript.sh`
+### Or
+**_In terminal_**
+`git clone https://github.com/Bl4k31/MSGSYS`
+**_Then_**
+`cd ./MSGSYS`
+**_Run Installer_**
+
 1. Then double finger-click the MSGSYS folder
 2. Select “New Terminal At Folder”
 3. Type (In terminal): sh ./InstallScript.sh
