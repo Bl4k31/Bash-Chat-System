@@ -14,11 +14,11 @@ done
 }
 send() {
 local msg="$1"
-echo "<${Uname}> $msg" | nc $S_IP $S_Port
+echo "<${Uname}> ${msg}" | nc $S_IP $S_Port
 }
 while true; do
 receive &
 printf "Message: "
 read to_send
-send $to_send
+send "${to_send}"
 done
