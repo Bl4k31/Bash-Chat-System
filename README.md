@@ -24,7 +24,7 @@ _Trying to make a GUI Version (Applescript) - Might take a while_
 
 	a. Change `Enable: #########` to `Enable: All applications`.\
 	b. Search for, and click: `Terminal`.\
-	c. Select `ADD`.\
+	c. Select `ADD`.\\
 4. Click `Change All…`
 
 To Open chat go to your user folder (Macintosh HD/Users/firstname.lastname)
