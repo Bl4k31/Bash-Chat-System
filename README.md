@@ -24,7 +24,7 @@ _Trying to make a GUI Version (Applescript) - Might take a while_
 To Open chat go to your user folder (Macintosh HD/Users/firstname.lastname)
 Double click the Tx and Rx scripts
 
-# Message System connection
+# Connecting to a server
 ### MSG.sh:
 Enter the server IP, Port, and Reciever Port (Provided by the host) into the prompts
 ### MSG-NonGUI.sh
