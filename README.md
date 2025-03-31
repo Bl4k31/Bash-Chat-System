@@ -7,10 +7,10 @@ _Trying to make a GUI Version (Applescript) - Might take a while_
 ## Installing & Updating (Should work for all major *NIX Systems)
 ### Clone repo:
 **_In terminal: (git)_** 
-`git clone https://github.com/Bl4k31/MSGSYS; cd ./MSGSYS; sh ./InstallScript.sh`
+`git clone https://github.com/Bl4k31/Bash-Chat-System; cd ./Bash-Chat-System; sh ./InstallScript.sh`
 ### OR
 **_In terminal: (curl)_** 
-`curl -L -O https://github.com/Bl4k31/MSGSYS/archive/v0.2.0.zip; unzip v0.2.0.zip; cd ./MSGSYS-0.2.0; sh ./InstallScript.sh`
+`curl -L -O https://github.com/Bl4k31/Bash-Chat-System/archive/v0.2.0.zip; unzip v0.2.0.zip; cd ./Bash-Chat-System-0.2.0; sh ./InstallScript.sh`
 ## Changing Default app for .sh files (Macos Only)
 1. Select `Get Info`
 2. Select the `Open With:` Dropdown
