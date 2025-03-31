@@ -9,12 +9,16 @@ a Quick and dirty Bash Messaging System I'm Developing for fun.
 ### Clone repo
 
 **_In terminal: (git)_**
- `git clone https://github.com/Bl4k31/Bash-Chat-System; cd ./Bash-Chat-System; sh ./InstallScript.sh`
+ ```
+ git clone https://github.com/Bl4k31/Bash-Chat-System; cd ./Bash-Chat-System; sh ./InstallScript.sh
+```
 
 ### OR
 
 **_In terminal: (curl)_**
- `curl -L -O https://github.com/Bl4k31/Bash-Chat-System/archive/v0.2.1.zip; unzip v0.2.1.zip; cd ./Bash-Chat-System-0.2.1; sh ./InstallScript.sh`
+ ```
+ curl -L -O https://github.com/Bl4k31/Bash-Chat-System/archive/v0.2.1.zip; unzip v0.2.1.zip; cd ./Bash-Chat-System-0.2.1; sh ./InstallScript.sh
+```
 
 ### Changing Default app for .sh files (First install)(Macos Only)
 
