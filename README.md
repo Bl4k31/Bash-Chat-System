@@ -1,19 +1,19 @@
-a Quick and dirty Bash Messaging System I'm Developing for fun
+a Quick and dirty Bash Messaging System I'm Developing for fun.
 
-Trying to make a GUI Version (Applescript) - Might take a while
+_Trying to make a GUI Version (Applescript) - Might take a while_
 
 
 # INITIAL SETUP:
 ## Installing & Updating (Should work for all major NIX' Systems)
 ### Clone repo:
-**_In terminal: _**
+**_In terminal:_** 
 `git clone https://github.com/Bl4k31/MSGSYS; cd ./MSGSYS; sh ./InstallScript.sh`
 ### Or
-**_In terminal: _**
+**_In terminal:_** 
 `git clone https://github.com/Bl4k31/MSGSYS`
-**_Then: _**
+**_Then:_** 
 `cd ./MSGSYS`
-**_Run Installe: r_**
+**_Run Installer:_** 
 `sh ./InstallScript.sh`
 
 1. Then double finger-click the MSGSYS folder
