@@ -6,10 +6,10 @@ _Trying to make a GUI Version (Applescript) - Might take a while_
 # INITIAL SETUP:
 ## Installing & Updating (Should work for all major *NIX Systems)
 ### Clone repo:
-**_In terminal:_** 
+**_In terminal: (git)_** 
 `git clone https://github.com/Bl4k31/MSGSYS; cd ./MSGSYS; sh ./InstallScript.sh`
 ### OR
-**_In terminal:_** 
+**_In terminal: (curl)_** 
 `curl -L -O https://github.com/Bl4k31/MSGSYS/archive/v0.2.0.zip; unzip v0.2.0.zip; cd ./MSGSYS-0.2.0; sh ./InstallScript.sh`
 ## Changing Default app for .sh files (Macos Only)
 1. Select `Get Info`
