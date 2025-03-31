@@ -4,7 +4,7 @@ _Trying to make a GUI Version (Applescript) - Might take a while_
 
 
 # INITIAL SETUP:
-## Installing & Updating (Should work for all major NIX' Systems)
+## Installing & Updating (Should work for all major *NIX Systems)
 ### Clone repo:
 **_In terminal:_** 
 `git clone https://github.com/Bl4k31/MSGSYS; cd ./MSGSYS; sh ./InstallScript.sh`
