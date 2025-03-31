@@ -1,6 +1,6 @@
 a Quick and dirty Bash Messaging System I'm Developing for fun.
 
-_Trying to make a GUI Version (Applescript) - Might take a while_
+> Trying to make a GUI Version (Applescript) - Might take a while
 
 
 # INITIAL SETUP:
