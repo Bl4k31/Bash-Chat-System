@@ -27,10 +27,10 @@ a Quick and dirty Bash Messaging System I'm Developing for fun.
     c. Select `ADD`.
 4. Click `Change All…`
 
-To Open chat go to your user folder (Macintosh HD/Users/firstname.lastname)
-Double click the Tx and Rx scripts
-
 ## Connecting to a server
+
+1. To Open the chat go to your installation folder (Usually: Users/firstname.lastname)
+2. Double click the MSG.sh script
 
 ### MSG.sh
 
