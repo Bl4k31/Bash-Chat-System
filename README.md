@@ -11,8 +11,10 @@ _Trying to make a GUI Version (Applescript) - Might take a while_
 ### Or
 **_In terminal:_** 
 `git clone https://github.com/Bl4k31/MSGSYS`
+
 **_Then:_** 
 `cd ./MSGSYS`
+
 **_Run Installer:_** 
 `sh ./InstallScript.sh`
 
