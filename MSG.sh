@@ -21,4 +21,5 @@ while true; do
 printf "Message: "
 read to_send
 send "${to_send}"
+sleep 0.1
 done
