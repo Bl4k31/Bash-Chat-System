@@ -20,10 +20,14 @@ _Trying to make a GUI Version (Applescript) - Might take a while_
 ## Changing Default app for .sh files (Macos Only)
 1. Select `Get Info`
 2. Select the `Open With:` Dropdown
-3. Click on the `<default application that opens.sh>` navigate to `Other…`
+3. Click on the `<default application that opens .sh>` navigate to `Other…`
+
 	a. Change `Enable: #########` to `Enable: All applications`.
+
 	b. Search for, and click: `Terminal`
+
 	c. Select `ADD`
+	
 4. Click `Change All…`
 
 To Open chat go to your user folder (Macintosh HD/Users/firstname.lastname)
