@@ -34,20 +34,20 @@ printf "\e[34;1mUpdating Server permissions in ${dtop}/Server.sh\e[0m\n"
 chmod u+x "${dtop}/Server.sh"
 sleep 0.5
 }
-ins_oldserver() {
+ins_nixserver() {
 printf "\e[34;1mCopying Server to ${dtop}\e[0m\n"
 cp "${ins_loc}/UnixSafe/Server-NonGUI.sh" ${dtop}
 sleep 0.5
-printf "\e[34;1mUpdating Server permissions in ${dtop}/Server.sh\e[0m\n"
-chmod u+x "${dtop}/Server.sh"
+printf "\e[34;1mUpdating Server permissions in ${dtop}/Server-NonGUI.sh\e[0m\n"
+chmod u+x "${dtop}/Server-NonGUI.sh"
 sleep 0.5
 }
-ins_oldfiles() {
+ins_nixfiles() {
 printf "\e[34;1mCopying Messenger to ${dtop}\e[0m\n"
 cp "${ins_loc}/UnixSafe/MSG-NonGUI.sh" ${dtop}
 sleep 0.5
-printf "\e[34;1mUpdating Messenger permissions in ${dtop}/MSG.sh\e[0m\n"
-chmod u+x "${dtop}/MSG.sh"
+printf "\e[34;1mUpdating Messenger permissions in ${dtop}/MSG-NonGUI.sh\e[0m\n"
+chmod u+x "${dtop}/MSG-NonGUI.sh"
 sleep 0.5
 }
 ins_newfiles() {
@@ -62,13 +62,13 @@ sleep 0.5
 }
 if confirm "Above details correct?"; then
 
-if confirm "Do you want to install the UNIX Compatable version?"; then
-ins_oldfiles
+if confirm "Do you want to install the UNIX Compatable version (Recommended)?"; then
+ins_nixfiles
 if confirm "Do you also want to install the server?"; then
-ins_oldserver
+ins_nixserver
 fi
 fi
-if confirm "Do you want to install the Macos only GUI Ver?"; then
+if confirm "Do you want to install the Macos only GUI Ver (Broken -don't use)?"; then
 ins_newfiles
 if confirm "Do you also want to install the server?"; then
 ins_server
