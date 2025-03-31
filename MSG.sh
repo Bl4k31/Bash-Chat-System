@@ -16,8 +16,8 @@ send() {
 local msg="$1"
 echo "<${Uname}> ${msg}" | nc $S_IP $S_Port
 }
-while true; do
 receive &
+while true; do
 printf "Message: "
 read to_send
 send "${to_send}"
