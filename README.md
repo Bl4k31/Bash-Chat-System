@@ -2,7 +2,7 @@
 
 a Quick and dirty Bash Messaging System I'm Developing for fun.
 
-> Trying to make a C&C to provide available servers
+> Trying to make a Register to provide available servers for quick connections
 
 ## Installing & Updating (Should work for all major *NIX Systems)
 
