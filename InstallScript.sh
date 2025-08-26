@@ -53,6 +53,8 @@ sleep 0.5
 ins_nixp2pfiles() {
 printf "\e[34;1mCopying Messenger to ${dtop}\e[0m\n"
 cp "${ins_loc}/UnixSafe/MSG2-NonGUI.sh" ${dtop}
+cp "${ins_loc}/UnixSafe/ResolveFromBonjour.sh" ${dtop}
+cp "${ins_loc}/UnixSafe/permanantlog.sh" ${dtop}
 sleep 0.5
 printf "\e[34;1mUpdating Messenger permissions in ${dtop}/MSG-NonGUI.sh\e[0m\n"
 chmod u+x "${dtop}/MSG2-NonGUI.sh"
@@ -61,9 +63,13 @@ sleep 0.5
 ins_newp2pfiles() {
 printf "\e[34;1mCopying Messenger to ${dtop}\e[0m\n"
 cp "${ins_loc}/MSG2.sh" ${dtop}
+cp "${ins_loc}/ResolveFromBonjour.sh" ${dtop}
+cp "${ins_loc}/permanantlog.sh" ${dtop}
 sleep 0.5
 printf "\e[31;1mClearing quarantine for ${dtop}/MSG2.sh (May Error)\e[0m\n"
 xattr -d com.apple.quarantine "${dtop}/MSG2.sh"
+xattr -d com.apple.quarantine "${dtop}/ResolveFromBonjour.sh"
+xattr -d com.apple.quarantine "${dtop}/permanantlog.sh"
 printf "\e[34;1mUpdating Messenger permissions in ${dtop}/MSG.sh\e[0m\n"
 chmod u+x "${dtop}/MSG2.sh"
 sleep 0.5

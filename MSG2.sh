@@ -8,13 +8,10 @@ touch ~/MSGContacts.txt
 touch ~/MSGContactsSerial.txt
 ip=`ifconfig | grep "inet " | grep -v 127.0.0.1 | awk '{print $2}'`
 receive() {
-while true; do
-echo `nc -l ${pt1}` >> ~/MSGMessagelog.txt
-done
+sh ./permanantlog.sh $pt1
 }
-receive &
 while true; do
-Action=`osascript -e 'choose from list {"Compose Message", "Add Contact (IP)", "Add Contact (SERIAL)", "Delete Contact", "Message log", "Refresh contacts (SERIAL)"} with prompt "select an action:"'`
+Action=`osascript -e 'choose from list {"Compose Message", "Add Contact (IP)", "Add Contact (SERIAL)", "Delete Contact", "Message log", "Refresh contacts (SERIAL)", "Start Reciever"} with prompt "select an action:"'`
 if [ "$Action" = "Add Contact (SERIAL)" ]; then
     ContactName=`osascript -e 'text returned of (display dialog "Contact Name:" default answer "")'`
     ContactSerial=`osascript -e 'text returned of (display dialog "Contact Serial number:" default answer "")'`
@@ -99,6 +96,8 @@ elif [ "$Action" = "Refresh contacts (SERIAL)" ]; then
             echo "$ContactName-$ContactIP" >> ~/MSGContacts.txt
         fi
     done
+elif [ "$Action" = "Start Reciever" ]; then
+    receive &
 else
     echo "No action selected, exiting."
     break

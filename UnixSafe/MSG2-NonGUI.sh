@@ -8,13 +8,10 @@ touch ~/MSGContacts.txt
 touch ~/MSGContactsSerial.txt
 ip=`ifconfig | grep "inet " | grep -v 127.0.0.1 | awk '{print $2}'`
 receive() {
-while true; do
-echo `nc -l ${pt1}` >> ~/MSGMessagelog.txt
-done
+sh ./permanantlog.sh $pt1
 }
-receive &
 while true; do
-echo "Actions: 1: \"Compose Message\", 2: \"Add Contact (IP)\", 3: \"Add Contact (SERIAL)\", 4: \"Delete Contact\", 5: \"Message log\", 6: \"Refresh contacts (SERIAL)\""
+echo "Actions: 1: \"Compose Message\", 2: \"Add Contact (IP)\", 3: \"Add Contact (SERIAL)\", 4: \"Delete Contact\", 5: \"Message log\", 6: \"Refresh contacts (SERIAL)\", 7: \"Start Reciever\""
 read -p "Select an action (number): " Action
 if [ "$Action" = "3" ]; then
     read -p "contact Name: " ContactName
@@ -73,6 +70,8 @@ elif [ "$Action" = "6" ]; then
             echo "$ContactName-$ContactIP" >> ~/MSGContacts.txt
         fi
     done
+elif [ "$Action" = "7" ]; then
+    receive &
 else
     echo "No action selected, exiting."
     break
